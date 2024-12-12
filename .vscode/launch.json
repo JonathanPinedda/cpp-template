@@ -1,0 +1,47 @@
+{
+    "version": "0.2.0",
+    "configurations": [
+        
+        {
+            "name": "Compile & Debug with GCC", // Nombre que aparece para identificar la tarea.
+            "type": "cppdbg",
+            "request": "launch",
+            "program": "${workspaceFolder}\\MainApplication.exe", // Ruta completa del archivo con extención ".exe" que se ejecutará
+            "args": [],
+            "stopAtEntry": false,
+            "cwd": "${workspaceFolder}",
+            "environment": [],
+            "externalConsole": true, // Condición de ejecutar en ventana externa (CMD/Shell) y no en pestaña/terminal de Visual Code
+            "MIMode": "gdb",
+            "miDebuggerPath": "C:\\mingw64\\bin\\gdb.exe", // Ruta al compilador g++ que se usará
+            "setupCommands": [
+                {
+                    "description": "Enable pretty-printing for gdb",
+                    "text": "-enable-pretty-printing",
+                    "ignoreFailures": true
+                },
+                {
+                    "description": "Set Disassembly Flavor to Intel",
+                    "text": "-gdb-set disassembly-flavor intel",
+                    "ignoreFailures": true
+                }
+            ],
+            "preLaunchTask": "Compile with GCC" // Pre-condición para compilar antes de entrar en modo debug
+        },
+        {
+            "name": "Compile & Run with GCC",// Nombre que aparece para identificar la tarea.
+            "type": "cppdbg",
+            "request": "launch",
+            "program": "${workspaceFolder}\\MainApplication.exe", // Ruta completa del archivo con extención ".exe" que se ejecutará
+            "args": [],
+            "stopAtEntry": false,
+            "cwd": "${workspaceFolder}",
+            "environment": [],
+            "externalConsole": true, // Condición de ejecutar en ventana externa (CMD/Shell) y no en pestaña/terminal de Visual Code
+            "MIMode": "gdb",
+            "miDebuggerPath": "C:\\mingw64\\bin\\gdb.exe",
+            "setupCommands": [],
+            "preLaunchTask": "Compile with GCC" // Pre-condición para compilar antes de ejecutar
+        }
+    ]
+}

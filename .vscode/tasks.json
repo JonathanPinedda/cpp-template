@@ -1,0 +1,23 @@
+{
+	"version": "2.0.0",
+	"tasks": [
+		{
+			"type": "cppbuild",
+			"label": "Compile with GCC", // Nombre que aparece para identificar la tarea.
+			"command": "C:\\mingw64\\bin\\g++.exe", // Ruta al compilador g++ que se usará
+			"args": [ // Lista de argumentos que se pasan al compilador
+				"-g", // Incluye información de depuración para gdb.
+				"-std=c++20", // Establece el estándar de C++ que se usará (C++20).
+				"-fdiagnostics-color=always", // Activa colores en los mensajes de error.
+				"${fileDirname}\\**.cpp", // Compila todos los archivos .cpp en la carpeta raíz del proyecto y subdirectorios.
+				"-o", // Indica que se especificará un nombre de salida.
+				"${workspaceFolder}\\MainApplication.exe" // Ruta completa del archivo con extención ".exe" que se creará
+			],
+			"problemMatcher": [
+				"$gcc", // Usa problemMatcher predefinido para resaltar errores de compilación y advertencias.		
+			],
+			"group": "build", // Agrupa esta tarea como una tarea de compilación para VS Code.
+			"detail": "compiler: C:\\mingw64\\bin\\g++.exe" // Información adicional para depurar, indicando el compilador usado.
+		}
+	]
+}
